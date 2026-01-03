@@ -1,0 +1,10 @@
+{
+	"name": "mdmilestones",
+	"version": "1.0.0",
+	"description": "Converte arquivos MD em milestones",
+	"main": "index.js",
+	"license": "MIT",
+	"scripts": {
+		"dev": "node index.js"
+	}
+}
