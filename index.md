@@ -5,3 +5,4 @@
 
 # New milestone
 - [x] task 1
+- [ ] task 2

@@ -13,7 +13,7 @@
 
 ## Installation
 
-You can use this tool directly with `npx` or install it globally.
+You can use this tool directly with `npx` or by running the development script.
 
 ### Using npx (Recommended)
 
@@ -21,10 +21,12 @@ You can use this tool directly with `npx` or install it globally.
 npx mdmilestones <path-to-your-file.md>
 ```
 
-### Global Install
+### Local Development
 
 ```bash
-npm install -g mdmilestones
+npm run dev
+# or
+yarn dev
 ```
 
 ## Usage
@@ -47,7 +49,7 @@ Create a markdown file (e.g., `TODO.md`) with the following structure:
 Then run the tool:
 
 ```bash
-mdmilestones TODO.md
+npx mdmilestones TODO.md
 ```
 
 **Output:**
@@ -60,7 +62,7 @@ mdmilestones TODO.md
 If you run it without arguments, it looks for an `index.md` file in the current directory.
 
 ```bash
-mdmilestones
+npx mdmilestones
 ```
 
 ## Contributing
