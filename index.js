@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const fs = require('fs');
 const path = require('path');
 
@@ -78,5 +79,7 @@ function parseMilestones(filePath) {
 	}
 }
 
-const mdPath = path.join(__dirname, 'index.md');
+const args = process.argv.slice(2);
+const mdPath = args[0] ? path.resolve(args[0]) : path.join(__dirname, 'index.md');
+
 parseMilestones(mdPath);

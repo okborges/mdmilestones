@@ -1,8 +1,20 @@
 {
 	"name": "mdmilestones",
 	"version": "1.0.0",
-	"description": "Converte arquivos MD em milestones",
+	"description": "A CLI tool that parses Markdown files to track project milestones and task progress directly in your terminal.",
+	"keywords": [
+		"markdown",
+		"milestones",
+		"progress",
+		"cli",
+		"task-tracker"
+	],
 	"main": "index.js",
+	"bin": {
+		"mdmilestones": "./index.js"
+	},
+	"repository": "https://github.com/okborges/mdmilestones",
+	"author": "Rafael Borges <rafael.okborges@gmail.com>",
 	"license": "MIT",
 	"scripts": {
 		"dev": "node index.js"
