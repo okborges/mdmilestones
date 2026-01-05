@@ -57,6 +57,10 @@ function parseMilestones(filePath) {
 			cyan: '\x1b[36m',
 		};
 
+		const logPath = path.join(__dirname, 'milestones_log.md');
+		const now = new Date().toLocaleString();
+		let fileOutput = `\n### Execution: ${now}\n\n`;
+
 		validMilestones.forEach((m) => {
 			const percentage = Math.round((m.completed / m.total) * 100);
 			let color = colors.red;
@@ -73,7 +77,16 @@ function parseMilestones(filePath) {
 			console.log(
 				`${emoji} ${color}${m.title} (${m.completed}/${m.total}) - ${percentage}%${colors.reset}`
 			);
+
+			fileOutput += `- ${emoji} **${m.title}** (${m.completed}/${m.total}) - ${percentage}%\n`;
 		});
+
+		try {
+			fs.appendFileSync(logPath, fileOutput);
+			console.log(`\nLog updated at: ${logPath}`);
+		} catch (err) {
+			console.error('Error writing to log file:', err);
+		}
 	} catch (error) {
 		console.error('Error reading or parsing file:', error.message);
 	}
